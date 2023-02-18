@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PS3="Choose: "
-select ITEM in "Display current date and time." "List users logged in" "Display disk usage" "Create a new user" "Weather" "Quit"
+select ITEM in "Display current date and time." "List users logged in" "Display disk usage" "Create a new user" "Weather" "Update the system using apt" "Quit"
 do
         case $REPLY in
                 1)
@@ -58,7 +58,13 @@ do
                         break
                         ;;
 
-                6 | q)
+                6)
+                        echo "Updating all packages on the system..."
+                        sleep 1
+                        sudo apt update && sudo apt full-upgrade -y
+                        ;;
+
+                7 | q)
                         echo "Quitting..."
                         break
                         ;;
