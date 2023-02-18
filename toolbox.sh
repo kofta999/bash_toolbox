@@ -62,6 +62,7 @@ do
                         echo "Updating all packages on the system..."
                         sleep 1
                         sudo apt update && sudo apt full-upgrade -y
+                        break
                         ;;
 
                 7 | q)
